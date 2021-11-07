@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { NavigationExtras, Router } from '@angular/router';
 import { SGBDController } from 'src/app/controllers/SGBDController';
 import { iCaracteristicas } from 'src/app/models/iSGBD';
 
@@ -10,12 +11,13 @@ import { iCaracteristicas } from 'src/app/models/iSGBD';
 })
 export class MainComponent implements OnInit {
 
-  valueRange: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  valueRange: number[] = [0, 1, 2, 3, 4, 5];//, 6, 7, 8, 9, 10
   form: FormGroup;
 
   constructor(
     private fb: FormBuilder,
     private controller: SGBDController,
+    private router: Router,
   ) { 
     this.form = this.fb.group({
       seguranca: ['0'],
@@ -33,9 +35,13 @@ export class MainComponent implements OnInit {
 
   submit(val: iCaracteristicas){
     if(this.form.valid){
-      debugger;
       this.controller.GetNearestNeighbors(val)?.then((res)=>{
-        console.log(res);
+        let extras: NavigationExtras = {
+          state: {
+            results: res,
+          }
+        }
+        this.router.navigate(['/resultados'], extras);
       });
     }
   }

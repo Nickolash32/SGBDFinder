@@ -10,25 +10,27 @@
                 <br />
                 Estes são os resultados da pesquisa que consideramos mais recomendados para você:
             </p>
-            <div class="card my-1">
+            <div class="card my-1" *ngFor="let item of results">
                 <div class="card-body row">
                     <div class="col-lg-3 d-flex flex-row" style="justify-content: center;">
-                        <img src="logo-oracle.png" alt="" style="height: 200px;">
+                        <img [src]="item.caminho_logo" [alt]="item.nome+'.png'" onerror="this.src = 'assets/img/no-img.jpg'" style="height: 200px;">
                     </div>
                     <div class="col-lg-9">
-                        <h5>Oracle</h5>
-                        <p class="card-text">"Os produtos Oracle Database oferecem aos clientes versões de custo
+                        <h5>{{item.nome}}</h5>
+                        <p class="card-text">
+                            {{item.descricao}}
+                            <!-- "Os produtos Oracle Database oferecem aos clientes versões de custo
                             otimizado e de alto desempenho do Oracle Database, o sistema de gerenciamento de banco
                             de dados convergente e multi-modelo líder mundial, bem como bancos de dados em memória,
                             NoSQL e MySQL. Oracle Autonomous Database, disponível on-premises via Oracle
                             Cloud@Customer ou na Oracle Cloud Infrastructure, permite aos clientes simplificar
-                            ambientes de banco de dados relacionais e reduzir cargas de trabalho de gerenciamento." - https://www.oracle.com/br/database/
+                            ambientes de banco de dados relacionais e reduzir cargas de trabalho de gerenciamento." - https://www.oracle.com/br/database/ -->
                         </p>
-                        <a href="#" class="btn btn-primary">Ir para Oracle</a>
+                        <a [href]="item.link" class="btn btn-primary">Ir para {{ item.nome }}</a>
                     </div>
                 </div>
             </div>
-            <div class="card my-1">
+            <!-- <div class="card my-1">
                 <div class="card-body row">
                     <div class="col-lg-3 d-flex flex-row" style="justify-content: center;">
                         <img src="logo-mysql.png" alt="" style="height: 200px;">
@@ -54,7 +56,7 @@
                         <a href="#" class="btn btn-primary">Ir para SQL Server</a>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

@@ -11,6 +11,11 @@ const routes: Routes = [
   {
     path:'resultados',
     component: ResultadosComponent
+  },
+  {
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full'
   }
 ];
 

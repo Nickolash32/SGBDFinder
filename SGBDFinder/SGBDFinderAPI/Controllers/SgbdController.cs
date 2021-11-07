@@ -12,6 +12,7 @@ using System.Web.Http.Cors;
 namespace SGBDFinderAPI.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]
+    [RoutePrefix("api/sgbd")]
     public class SgbdController : ApiController
     {
         public static string ourDBName = ConfigurationManager.AppSettings["mongoName"];
@@ -24,12 +25,14 @@ namespace SGBDFinderAPI.Controllers
             var data = database.GetCollection<SgbdModel>("SGBD").AsQueryable().ToList();
             return data;
         }
-        // POST api/<controller>
-        public List<SgbdResult> Post([FromBody] SgbdModel sgbdModel)
+
+        [HttpPost]
+        [Route("knn")]
+        public List<SgbdResult> Post([FromBody] CharacteristicsModel sgbdModel)
         {
             List<SgbdResult> distancedItems = new List<SgbdResult>();
 
-            var data = getDataBase();
+            List<SgbdModel> data = getDataBase();
 
             foreach (SgbdModel item in data)
             {
