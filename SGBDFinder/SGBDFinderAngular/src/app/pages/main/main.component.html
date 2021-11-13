@@ -1,0 +1,212 @@
+<div class="h-100">
+    <div class="mainBody py-5">
+        <form [formGroup]="form" (ngSubmit)="submit(form.value)" class="w-100">
+            <div class="card w-100 nosso-card">
+                <div class="card-header" style="background-color: white; 
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;">
+                    <h1 class="b-b-black"> Questionário </h1>
+                </div>
+                <div class="card-body p-3 px-5" style="padding-top: 0 !important;">
+                    <p class="lil-gray">
+                        Selecione os valores das características que ache necessário que seu SGBD possua.
+                        <br />
+                        <br />
+                        Caso tenha dúvidas de como evaluar as características, clique no nome de uma delas para
+                        visualizar
+                        uma breve descrição da característica.
+                    </p>
+                    <!-- Segurança -->
+                    <div class="col-lg-12 row desiredPY">
+                        <div class="col-lg-10">
+                            <h3 class="b-b-black pb-2" data-toggle="collapse" href="#collapseSeguranca" role="button"
+                                aria-expanded="false" aria-controls="collapseSeguranca">
+                                Segurança
+                            </h3>
+                            <div class="collapse" id="collapseSeguranca">
+                                <p class="lil-gray instrucao">
+                                    A subcaracterística de segurança está relacionada à proteção das informações contra
+                                    acessos não autorizados.
+                                    <br />
+                                    <br />
+                                    Critérios para a análise de SGBDs em questões de segurança sendo alguns deles a
+                                    capacidade de o produto (SGBD) providenciar restrição de acessos aos valores da base
+                                    seja por um arquivo, onde o usuário que possui acesso ao arquivo possuirá acesso
+                                    total à
+                                    base, ou restrição baseada em valores dentro da própria base (por exemplo, um
+                                    usuário de
+                                    departamento pode ter acesso a dados que pertencem apenas a aquele departamento).
+                                    Também
+                                    deve-se analisar se os privilégios a estes acessos possam ser providenciados ou
+                                    revogados dinamicamente, de maneira instantânea sem necessitar interferir com
+                                    usuários
+                                    ativos.
+                                    Os controles, porém, não devem ser restringidos apenas para controles de acesso de
+                                    leituras, mas também para outros conceitos, como regras e transações de negócio.
+                                    <br />
+                                    “Chamamos de regras e transações de negócio, a lógica da aplicação que vai desde a
+                                    mais
+                                    básica como incluir, alterar e excluir dados em uma tabela, até transações mais
+                                    complexas. Grande parte dessas regras são operações com a base de dados e devem
+                                    também
+                                    poder sofrer restrições de acesso e execução.” (ACKERMANN, 2003)
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 text-right d-flex align-items-center">
+                            <select formControlName="seguranca" class="form-control">
+                                <option *ngFor="let val of valueRange; let i = index" [value]="val">{{ val }}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Consistência e Integridade de Dados -->
+                    <div class="col-lg-12 row desiredPY">
+                        <div class="col-lg-10">
+                            <h3 class="b-b-black pb-2" data-toggle="collapse" href="#collapseCons" role="button"
+                                aria-expanded="false" aria-controls="collapseCons">
+                                Consistência e Integridade de Dados
+                            </h3>
+                            <div class="collapse" id="collapseCons">
+                                <p class="lil-gray instrucao">
+                                    Pode ser visto como a capacidade dos sistemas de gerenciamento
+                                    de bancos de dados de executarem operações de maneira que priorizasse a consistência
+                                    e
+                                    integridade da regra de negócio dos dados e, também, dos próprios dados, evitando
+                                    situações de dados corrompidos ou que não seguiam mais as regras de negócio por trás
+                                    do
+                                    contexto da aplicação que fosse utilizar o SGBD.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 text-right d-flex align-items-center">
+                            <select formControlName="consistencia_integridade" class="form-control">
+                                <option *ngFor="let val of valueRange" [value]="val">{{ val }}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Disponibilidade -->
+                    <div class="col-lg-12 row desiredPY">
+                        <div class="col-lg-10">
+                            <h3 class="b-b-black pb-2" data-toggle="collapse" href="#collapseDisponibilidade"
+                                role="button" aria-expanded="false" aria-controls="collapseDisponibilidade">
+                                Disponibilidade
+                            </h3>
+                            <div class="collapse" id="collapseDisponibilidade">
+                                <p class="lil-gray instrucao">
+                                    Em termos simples é a condição em que um determinado recurso possa ser acessado, em
+                                    termos de Banco de dados isso quer dizer sua acessibilidade e uso de dados.
+                                    <br />
+                                    <br />
+                                    Roberto Pereira afirma que existem três tipos de :
+                                    Disponibilidade Básica: É quando a estrutura possui o mínimo necessário para que
+                                    atenda suas funcionalidades.
+                                    Disponibilidade Alta: Possui uma redundância de equipamentos e recursos de forma que
+                                    ao surgir uma falha ela seja mascarada de forma transparente ao usuário, embora nem
+                                    sempre é possível mascarar todas as falhas.
+                                    Disponibilidade Contínua: Diferente da alta disponibilidade que apenas mascara as
+                                    falhas, aqui todos os componentes estão fortemente agrupados e são transparentes ao
+                                    usuário, é possível manter o sistema rodando o tempo inteiro.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 text-right d-flex align-items-center">
+                            <select formControlName="disponibilidade" class="form-control">
+                                <option *ngFor="let val of valueRange" [value]="val">{{ val }}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Facilidade de Uso -->
+                    <div class="col-lg-12 row desiredPY">
+                        <div class="col-lg-10">
+                            <h3 class="b-b-black pb-2" data-toggle="collapse" href="#collapseFacilidade" role="button"
+                                aria-expanded="false" aria-controls="collapseFacilidade">
+                                Facilidade de Uso
+                            </h3>
+                            <div class="collapse" id="collapseFacilidade">
+                                <p class="lil-gray instrucao">
+                                    De acordo com Neil Patel, facilidade de uso (também conhecido como usabilidade),
+                                    nada mais é que o nível de facilidade que o usuário tem pra usar um sistema ou
+                                    produto e
+                                    tem o objetivo de fazer com que o usuário saiba como o sistema funciona da maneira
+                                    mais fácil possível e consiga usufruir de todos seus recursos sem dificuldade.
+                                    <br />
+                                    Não é um recurso necessário para o bom funcionamento do sistema, mas é essencial e
+                                    indispensável para a maioria dos usuários, que quase sempre estão procurando a forma
+                                    mais simples de fazer o que querem.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 text-right d-flex align-items-center">
+                            <select formControlName="facilidade_uso" class="form-control">
+                                <option *ngFor="let val of valueRange" [value]="val">{{ val }}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Interoperabilidade -->
+                    <div class="col-lg-12 row desiredPY">
+                        <div class="col-lg-10">
+                            <h3 class="b-b-black pb-2" data-toggle="collapse" href="#collapseInterop" role="button"
+                                aria-expanded="false" aria-controls="collapseInterop">
+                                Interoperabilidade
+                            </h3>
+                            <div class="collapse" id="collapseInterop">
+                                <p class="lil-gray instrucao">
+                                    Alexandre Morais de Souza afirma que a interoperabilidade é a capacidade de um
+                                    software (SGBD) de interagir com outros recursos do(s) sistema(s).
+                                    <br />
+                                    <br />
+                                    Em um SGBD pode ser visto como sua compatibilidade e facilidade de implantação.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 text-right d-flex align-items-center">
+                            <select formControlName="interoperabilidade" class="form-control">
+                                <option *ngFor="let val of valueRange" [value]="val">{{ val }}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Desempenho e Escalabilidade -->
+                    <div class="col-lg-12 row desiredPY">
+                        <div class="col-lg-10">
+                            <h3 class="b-b-black pb-2" data-toggle="collapse" href="#collapseDesempenho" role="button"
+                                aria-expanded="false" aria-controls="collapseDesempenho">
+                                Desempenho e Escalabilidade
+                            </h3>
+                            <div class="collapse" id="collapseDesempenho">
+                                <p class="lil-gray instrucao">
+                                    Alexandre Morais de Souza dita que para determinar o desempenho de um SGBD, é necessário analisar se o SGBD está
+                                    preparado para otimizar múltiplas consultas, avaliar se o SGBD será executado de
+                                    forma nativa ou em modo de compatibilidade (onde compatibilidade consiste em
+                                    traduzir o código fonte caso o sistema operacional do maquinário que o utilizará,
+                                    perdendo significativamente em performance), verificar se há limitações na
+                                    quantidade de bases suportadas pelo SGBD e analisar se o mesmo possui
+                                    características de paralelismo, ou seja, se o SGBD suporta velocidade linear (se
+                                    dobro da capacidade do hardware permite executar uma operação pela metade do tempo),
+                                    e escala linear ( se o dobro do hardware pode executar no mesmo tempo uma tarefa
+                                    duas vezes maior).
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 text-right d-flex align-items-center">
+                            <select formControlName="desempenho_escalabilidade" class="form-control">
+                                <option *ngFor="let val of valueRange" [value]="val">{{ val }}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="col-lg-12 text-center">
+                        <button class="btn btn-lg btn-primary" type="submit">
+                            <h5 class="m-0">Pesquisar</h5>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
