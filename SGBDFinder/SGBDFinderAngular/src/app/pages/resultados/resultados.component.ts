@@ -17,6 +17,7 @@ export class ResultadosComponent implements OnInit {
     let state = this.router.getCurrentNavigation()?.extras.state;
     if (state != null) {
       this.results = state.results;
+      console.log(this.results);
     }
   }
 

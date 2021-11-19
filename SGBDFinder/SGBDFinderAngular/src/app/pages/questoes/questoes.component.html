@@ -1,0 +1,402 @@
+<div class="h-100">
+    <div class="mainBody py-5">
+        <form [formGroup]="form" (ngSubmit)="submit(form.value)" class="w-100">
+            <div class="card w-100 nosso-card">
+                <div class="card-header" style="background-color: white; 
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;">
+                    <h1 class="b-b-black"> Questionário - Questões </h1>
+                </div>
+                <div class="card-body p-3 px-5" style="padding-top: 0 !important;">
+                    <p class="lil-gray">
+                        Selecione os valores das características que ache necessário que seu SGBD possua.
+                        <br />
+                        <br />
+                        Para um melhor resultado, marque apenas as alternativas que você assuma que sejam necessárias
+                        para seu SGBD.
+                    </p>
+                    <!-- Segurança -->
+                    <div class="col-lg-12 row desiredPY">
+                        <div class="col-lg-12 row">
+                            <h3 class="b-b-black pb-2">
+                                Segurança
+                            </h3>
+                        </div>
+                        <!-- Questões -->
+                        <!-- 1 -->
+                        <div class="desiredPY col-lg-12 row">
+                            <div class="col-lg-10">
+                                <div>
+                                    <h5 class="lil-gray instrucao">
+                                        É preferivel que o SGBD realize criptografia dos dados armazenados?
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 text-right d-flex align-items-center">
+                                <select formControlName="seg1" class="form-control">
+                                    <option value="0">Não</option>
+                                    <option value="2">Sim</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- 2 -->
+                        <div class="desiredPY col-lg-12 row">
+                            <div class="col-lg-10">
+                                <div>
+                                    <h5 class="lil-gray instrucao">
+                                        É preferivel que o SGBD realize controle de acesso?
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 text-right d-flex align-items-center">
+                                <select formControlName="seg2" class="form-control">
+                                    <option value="0">Não</option>
+                                    <option value="1">Sim</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- 3 -->
+                        <div class="desiredPY col-lg-12 row">
+                            <div class="col-lg-10">
+                                <div>
+                                    <h5 class="lil-gray instrucao">
+                                        É preferivel que o SGBD seja capaz de manipular privilégios de usuários?
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 text-right d-flex align-items-center">
+                                <select formControlName="seg3" class="form-control">
+                                    <option value="0">Não</option>
+                                    <option value="2">Sim</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- 4 -->
+                        <div class="desiredPY col-lg-12 row">
+                            <div class="col-lg-10">
+                                <div>
+                                    <h5 class="lil-gray instrucao">
+                                        É preferivel que o SGBD consiga realizar backups?
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 text-right d-flex align-items-center">
+                                <select formControlName="seg4" class="form-control">
+                                    <option value="0">Não</option>
+                                    <option value="2">Sim</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- endQuestões -->
+                    </div>
+
+                    <!-- DISPONIBILIDADE -->
+                    <div class="col-lg-12 row desiredPY">
+                        <div class="col-lg-12 row">
+                            <h3 class="b-b-black pb-2">
+                                Disponibilidade
+                            </h3>
+                        </div>
+                        <!-- Questões -->
+                        <!-- 1 -->
+                        <div class="desiredPY col-lg-12 row">
+                            <div class="col-lg-10">
+                                <div>
+                                    <h5 class="lil-gray instrucao">
+                                        É preferivel que o SGBD seja capaz de realizar Espelhamento?
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 text-right d-flex align-items-center">
+                                <select formControlName="disp1" class="form-control">
+                                    <option value="0">Não</option>
+                                    <option value="2">Sim</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- 2 -->
+                        <div class="desiredPY col-lg-12 row">
+                            <div class="col-lg-10">
+                                <div>
+                                    <h5 class="lil-gray instrucao">
+                                        É preferivel que o SGBD seja capaz de realizar Fragmentação?
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 text-right d-flex align-items-center">
+                                <select formControlName="disp2" class="form-control">
+                                    <option value="0">Não</option>
+                                    <option value="2">Sim</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- 3 -->
+                        <div class="desiredPY col-lg-12 row">
+                            <div class="col-lg-10">
+                                <div>
+                                    <h5 class="lil-gray instrucao">
+                                        O sistema necessita de alta tolerância a falhas?
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 text-right d-flex align-items-center">
+                                <select formControlName="disp3" class="form-control">
+                                    <option value="0">Não</option>
+                                    <option value="1">Sim</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- endQuestões -->
+                    </div>
+
+                    <!-- Consistência e Integridade de Dados -->
+                    <div class="col-lg-12 row desiredPY">
+                        <div class="col-lg-12 row">
+                            <h3 class="b-b-black pb-2">
+                                Consistência e Integridade de Dados
+                            </h3>
+                        </div>
+                        <!-- Questões -->
+                        <!-- 1 -->
+                        <div class="desiredPY col-lg-12 row">
+                            <div class="col-lg-10">
+                                <div>
+                                    <h5 class="lil-gray instrucao">
+                                        É preferivel que o SGBD suporte transações no modelo ACID?
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 text-right d-flex align-items-center">
+                                <select formControlName="cons1" class="form-control">
+                                    <option value="0">Não</option>
+                                    <option value="2">Sim</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- 2 -->
+                        <div class="desiredPY col-lg-12 row">
+                            <div class="col-lg-10">
+                                <div>
+                                    <h5 class="lil-gray instrucao">
+                                        O sistema irá utilizar restrições ou limitações de regras de negócios?
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 text-right d-flex align-items-center">
+                                <select formControlName="cons2" class="form-control">
+                                    <option value="0">Não</option>
+                                    <option value="3">Sim</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- 3 -->
+                        <div class="desiredPY col-lg-12 row">
+                            <div class="col-lg-10">
+                                <div>
+                                    <h5 class="lil-gray instrucao">
+                                        É preferivel que o SGBD manipule os dados de maneira concorrente (travar ou a linha
+                                        ou a tabela quando já estiver realizando uma operação)?
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 text-right d-flex align-items-center">
+                                <select formControlName="cons3" class="form-control">
+                                    <option value="0">Não</option>
+                                    <option value="2">Sim</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- endQuestões -->
+                    </div>
+
+                    <!-- USABILIDADE -->
+                    <div class="col-lg-12 row desiredPY">
+                        <div class="col-lg-12 row">
+                            <h3 class="b-b-black pb-2">
+                                Usabilidade
+                            </h3>
+                        </div>
+                        <!-- Questões -->
+                        <!-- 1 -->
+                        <div class="desiredPY col-lg-12 row">
+                            <div class="col-lg-10">
+                                <div>
+                                    <h5 class="lil-gray instrucao">
+                                        O usuário faz questão de que a interface seja limpa e acessível?
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 text-right d-flex align-items-center">
+                                <select formControlName="usab1" class="form-control">
+                                    <option value="0">Não</option>
+                                    <option value="2">Sim</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- 2 -->
+                        <div class="desiredPY col-lg-12 row">
+                            <div class="col-lg-10">
+                                <div>
+                                    <h5 class="lil-gray instrucao">
+                                        Qual o nível de familiaridade do usuário com SGBDs?
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 text-right d-flex align-items-center">
+                                <select formControlName="usab2" class="form-control">
+                                    <option value="3">Baixa</option>
+                                    <option value="2">Média</option>
+                                    <option value="1">Alta</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- 3 -->
+                        <div class="desiredPY col-lg-12 row">
+                            <div class="col-lg-10">
+                                <div>
+                                    <h5 class="lil-gray instrucao">
+                                        É preferível que a interface do SGBD seja customizável?
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 text-right d-flex align-items-center">
+                                <select formControlName="usab3" class="form-control">
+                                    <option value="0">Não</option>
+                                    <option value="2">Sim</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- endQuestões -->
+                    </div>
+
+                    <!-- INTEROPERABILIDADE -->
+                    <div class="col-lg-12 row desiredPY">
+                        <div class="col-lg-12 row">
+                            <h3 class="b-b-black pb-2">
+                                Interoperabilidade
+                            </h3>
+                        </div>
+                        <!-- Questões -->
+                        <!-- 1 -->
+                        <div class="desiredPY col-lg-12 row">
+                            <div class="col-lg-10">
+                                <div>
+                                    <h5 class="lil-gray instrucao">
+                                        É preferivel que o SGBD seja “open source”?
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 text-right d-flex align-items-center">
+                                <select formControlName="interop1" class="form-control">
+                                    <option value="0">Não</option>
+                                    <option value="1">Sim</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- 2 -->
+                        <div class="desiredPY col-lg-12 row">
+                            <div class="col-lg-10">
+                                <div>
+                                    <h5 class="lil-gray instrucao">
+                                        O sistema irá se comunicar com terceiros (programas externos)?
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 text-right d-flex align-items-center">
+                                <select formControlName="interop2" class="form-control">
+                                    <option value="0">Não</option>
+                                    <option value="2">Sim</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- 3 -->
+                        <div class="desiredPY col-lg-12 row">
+                            <div class="col-lg-10">
+                                <div>
+                                    <h5 class="lil-gray instrucao">
+                                        Haverá uma situação em que o SGBD necessite ser executado em algum modo de
+                                        compatibilidade?
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 text-right d-flex align-items-center">
+                                <select formControlName="interop3" class="form-control">
+                                    <option value="0">Não</option>
+                                    <option value="2">Sim</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- endQuestões -->
+                    </div>
+
+                    <!-- DESEMPENHO E ESCALABILIDADE -->
+                    <div class="col-lg-12 row desiredPY">
+                        <div class="col-lg-12 row">
+                            <h3 class="b-b-black pb-2">
+                                Desempenho e escalabilidade
+                            </h3>
+                        </div>
+                        <!-- Questões -->
+                        <!-- 1 -->
+                        <div class="desiredPY col-lg-12 row">
+                            <div class="col-lg-10">
+                                <div>
+                                    <h5 class="lil-gray instrucao">
+                                        Seria problema o SGBD ser executado em uma máquina de hardware mais fraco?
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 text-right d-flex align-items-center">
+                                <select formControlName="desem1" class="form-control">
+                                    <option value="0">Não</option>
+                                    <option value="1">Sim</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- 2 -->
+                        <div class="desiredPY col-lg-12 row">
+                            <div class="col-lg-10">
+                                <div>
+                                    <h5 class="lil-gray instrucao">
+                                        O tempo de resposta é crítico?
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 text-right d-flex align-items-center">
+                                <select formControlName="desem2" class="form-control">
+                                    <option value="0">Não</option>
+                                    <option value="2">Sim</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- 3 -->
+                        <div class="desiredPY col-lg-12 row">
+                            <div class="col-lg-10">
+                                <div>
+                                    <h5 class="lil-gray instrucao">
+                                        O sistema irá trabalhar com uma massa de dados muito grande?
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 text-right d-flex align-items-center">
+                                <select formControlName="desem3" class="form-control">
+                                    <option value="0">Não</option>
+                                    <option value="2">Sim</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- endQuestões -->
+                    </div>
+
+                </div>
+                <div class="card-footer">
+                    <div class="col-lg-12 text-center">
+                        <button class="btn btn-lg btn-primary" type="submit">
+                            <h5 class="m-0">Pesquisar</h5>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

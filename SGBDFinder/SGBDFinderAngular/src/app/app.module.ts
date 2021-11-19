@@ -9,6 +9,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ResultadosComponent } from './pages/resultados/resultados.component';
 import { MainModule } from './pages/main/main.module';
 import { HttpClientModule } from '@angular/common/http';
+import { QuestoesComponent } from './pages/questoes/questoes.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,12 +19,14 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     FooterComponent,
     ResultadosComponent,
+    QuestoesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MainModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [
   ],

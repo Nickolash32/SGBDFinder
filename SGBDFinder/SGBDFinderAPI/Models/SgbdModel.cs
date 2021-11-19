@@ -5,30 +5,24 @@ using System.Web;
 
 namespace SGBDFinderAPI.Models
 {
-    public class SgbdModel
+    public class SgbdModel : CharacteristicsModel
     {
         public object _id { get; set; }
         public string nome { get; set; }
         public  string descricao { get; set; }
         public string caminho_logo { get; set; }
         public string link { get; set; }
-        public int seguranca { get; set; }
-        public int consistencia_integridade { get; set; }
-        public int disponibilidade { get; set; }
-        public int facilidade_uso { get; set; }
-        public int interoperabilidade { get; set; }
-        public int desempenho_escalabilidade { get; set; }
         
     }
 
     public class CharacteristicsModel
     {
-        public int seguranca { get; set; }
-        public int consistencia_integridade { get; set; }
-        public int disponibilidade { get; set; }
-        public int facilidade_uso { get; set; }
-        public int interoperabilidade { get; set; }
-        public int desempenho_escalabilidade { get; set; }
+        public decimal seguranca { get; set; }
+        public decimal consistencia_integridade { get; set; }
+        public decimal disponibilidade { get; set; }
+        public decimal facilidade_uso { get; set; }
+        public decimal interoperabilidade { get; set; }
+        public decimal desempenho_escalabilidade { get; set; }
     }
 
     public class SgbdResult : SgbdModel

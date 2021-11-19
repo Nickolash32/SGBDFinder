@@ -32,6 +32,13 @@ namespace SGBDFinderAPI.Controllers
         {
             List<SgbdResult> distancedItems = new List<SgbdResult>();
 
+            if (sgbdModel.seguranca > 10) sgbdModel.seguranca = 10;
+            if (sgbdModel.consistencia_integridade > 10) sgbdModel.consistencia_integridade = 10;
+            if (sgbdModel.disponibilidade > 10) sgbdModel.disponibilidade = 10;
+            if (sgbdModel.facilidade_uso > 10) sgbdModel.facilidade_uso = 10;
+            if (sgbdModel.interoperabilidade > 10) sgbdModel.interoperabilidade = 10;
+            if (sgbdModel.desempenho_escalabilidade > 10) sgbdModel.desempenho_escalabilidade = 10;
+
             List<SgbdModel> data = getDataBase();
 
             foreach (SgbdModel item in data)

@@ -34,16 +34,12 @@ export class MainComponent implements OnInit {
   }
 
   submit(val: iCaracteristicas){
-    if(this.form.valid){
-      this.controller.GetNearestNeighbors(val)?.then((res)=>{
-        let extras: NavigationExtras = {
-          state: {
-            results: res,
-          }
-        }
-        this.router.navigate(['/resultados'], extras);
-      });
+    let extras: NavigationExtras = {
+      state: {
+        form: val,
+      }
     }
+    this.router.navigate(['/questoes'], extras);
   }
 
 }
