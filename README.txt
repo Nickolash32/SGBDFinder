@@ -1,3 +1,2 @@
 
-This is a project that is currently in developement and will eventually be released as open source.
-Matheus
+This is a project that was developed to assist in the selecion of DBMS.
